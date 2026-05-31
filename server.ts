@@ -57,29 +57,52 @@ async function startServer() {
   app.post("/api/mcp", (req, res) => {
     try {
       const body = req.body;
-      const { method, params } = body;
+      const method = body.method;
+      const params = body.params;
+      const requestId = body.id;
+      const isJsonRpc = body.jsonrpc === "2.0";
 
       let result: any = null;
 
       if (method === 'initialize') {
         result = {
-          name: "Prophets Plum Orchestrator",
-          version: "1.0.0",
-          capabilities: { tools: {}, prompts: {}, resources: {} }
+          protocolVersion: "2024-11-05",
+          capabilities: {
+            prompts: {},
+            resources: {},
+            tools: {}
+          },
+          serverInfo: {
+            name: "Prophets Plum Orchestrator",
+            version: "1.0.0"
+          }
         };
       } else if (method === 'tools/list') {
         result = { tools: TOOLS };
       } else if (method === 'tools/call') {
-        result = { status: 'success', message: `Executed tool: ${params?.name}` };
+        result = { 
+          content: [
+            { type: 'text', text: `Executed tool: ${params?.name || 'unknown'}` }
+          ],
+          isError: false
+        };
       } else if (method === 'prompts/list') {
         result = { prompts: [] };
       } else if (method === 'resources/list') {
         result = { resources: [] };
+      } else if (method === 'notifications/initialized') {
+        result = { status: "success" };
       } else {
         result = { status: "success", message: "MCP command received", payload: body };
       }
 
-      res.json(result);
+      const responsePayload = isJsonRpc ? {
+        jsonrpc: "2.0",
+        id: requestId,
+        result: result
+      } : result;
+
+      res.json(responsePayload);
     } catch (error) {
       res.status(400).json({ error: "Invalid MCP request" });
     }

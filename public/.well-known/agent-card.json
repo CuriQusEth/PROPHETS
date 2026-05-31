@@ -35,6 +35,28 @@
     "daily-operations",
     "mcp-command-execution"
   ],
+  "skills": [
+    {
+      "name": "get_race_status",
+      "description": "Get the current status of a race"
+    },
+    {
+      "name": "start_race",
+      "description": "Start a new race"
+    },
+    {
+      "name": "get_leaderboard",
+      "description": "Get the current leaderboard"
+    },
+    {
+      "name": "optimize_speed",
+      "description": "Optimize properties for speed"
+    },
+    {
+      "name": "get_track_info",
+      "description": "Get information about a track"
+    }
+  ],
   "supportedChains": ["eip155:8453"],
   "active": true,
   "status": "online"
