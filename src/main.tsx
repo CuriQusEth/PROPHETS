@@ -2,7 +2,7 @@ import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { WagmiProvider } from 'wagmi';
-import { config } from './lib/web3.ts';
+import { config } from './lib/wagmi.ts';
 import App from './App.tsx';
 import './index.css';
 
