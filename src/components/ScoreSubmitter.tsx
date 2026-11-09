@@ -50,7 +50,7 @@ export const ScoreSubmitter = ({ score }: { score: number }) => {
         chainId: base.id, // Enforce Base chain
       });
       console.log('Tx hash:', hash);
-      setStatus('GM sent successfully on Base!');
+      setStatus('GM sent successfully on Base Denim (200ms block)!');
     } catch(e: any) {
       console.error(e);
       setStatus(`Failed: ${e.message}`);

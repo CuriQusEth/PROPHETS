@@ -47,9 +47,11 @@ export default async function handler(req: Request) {
       protocol: "MCP",
       version: "1.0.0",
       name: "Prophets Plum Orchestrator MCP",
+      network: "Base Mainnet (Denim - 200ms canonical blocks)",
+      chainId: 8453,
       status: "active",
-      description: "Active MCP server for Prophets Plum Orchestrator Agent",
-      capabilities: ["prophecy-mechanics", "ecosystem-management", "content-generation"],
+      description: "Active MCP server for Prophets Plum Orchestrator Agent on Base Mainnet Denim",
+      capabilities: ["prophecy-mechanics", "ecosystem-management", "content-generation", "base-denim-200ms-settlement"],
       timestamp: new Date().toISOString()
     }), {
       status: 200,

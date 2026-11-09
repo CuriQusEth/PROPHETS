@@ -47,9 +47,11 @@ async function startServer() {
       protocol: "MCP",
       version: "1.0.0",
       name: "Prophets Plum Orchestrator MCP",
+      network: "Base Mainnet (Denim - 200ms canonical blocks)",
+      chainId: 8453,
       status: "active",
-      description: "Active MCP server for Prophets Plum Orchestrator Agent",
-      capabilities: ["prophecy-mechanics", "ecosystem-management", "content-generation"],
+      description: "Active MCP server for Prophets Plum Orchestrator Agent on Base Mainnet Denim",
+      capabilities: ["prophecy-mechanics", "ecosystem-management", "content-generation", "base-denim-200ms-settlement"],
       timestamp: new Date().toISOString()
     });
   });
@@ -113,6 +115,9 @@ async function startServer() {
     res.json({
       name: "Prophets Plum Orchestrator",
       status: "active",
+      network: "Base Mainnet (Denim)",
+      chainId: 8453,
+      blockTime: "200ms",
       wallet: "0x29536D0bc1004ab274c4F0F59734Ad74D4559b7B",
       platform: "Prophets Plum",
       version: "1.0.0"

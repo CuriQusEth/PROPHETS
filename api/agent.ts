@@ -18,6 +18,9 @@ export default async function handler(req: Request) {
     return new Response(JSON.stringify({
       name: "Prophets Plum Orchestrator",
       status: "active",
+      network: "Base Mainnet (Denim)",
+      chainId: 8453,
+      blockTime: "200ms",
       wallet: "0x29536D0bc1004ab274c4F0F59734Ad74D4559b7B",
       platform: "Prophets Plum",
       version: "1.0.0"

@@ -1,9 +1,16 @@
 {
   "name": "Prophets Plum Orchestrator",
-  "description": "Prophets Plum platformunda çalışan ERC-8004 uyumlu AI Agent. Prophecy mechanics, plum ecosystem management, content generation ve multi-task automation yapan akıllı orchestrator.",
+  "description": "Prophets Plum platformunda çalışan ERC-8004 uyumlu AI Agent. Base Mainnet Denim (200ms blok süresi) üzerinde prophecy mechanics, plum ecosystem management, content generation ve multi-task automation yapan akıllı orchestrator.",
   "version": "1.0.0",
   "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
   "image": "https://prophets-plum.vercel.app/logo.png",
+  "network": {
+    "name": "Base Mainnet",
+    "upgrade": "Denim",
+    "chainId": 8453,
+    "blockTime": "200ms",
+    "status": "active"
+  },
   "wallets": {
     "base": "0x29536D0bc1004ab274c4F0F59734Ad74D4559b7B"
   },
@@ -12,7 +19,7 @@
       "name": "A2A",
       "endpoint": "https://prophets-plum.vercel.app/.well-known/agent-card.json",
       "version": "1.0.0",
-      "description": "Agent-to-Agent communication"
+      "description": "Agent-to-Agent communication on Base Denim"
     },
     {
       "name": "MCP",
@@ -33,7 +40,8 @@
     "content-generation",
     "multi-task-automation",
     "daily-operations",
-    "mcp-command-execution"
+    "mcp-command-execution",
+    "base-denim-200ms-settlement"
   ],
   "skills": [
     {
